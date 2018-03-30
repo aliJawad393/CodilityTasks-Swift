@@ -44,10 +44,9 @@ public func solution(_ X : Int, _ Y : Int, _ D : Int) -> Int {
     }
     
     let difference = Y - X
-    var steps: Int = difference / D
-    if (difference % D) > 0 {
-        steps = steps + 1
-    }
+    let div: Float = Float(difference) / Float(D)
+    let steps: Int = Int(div.rounded(.up))
+    
     return steps
 }
 
